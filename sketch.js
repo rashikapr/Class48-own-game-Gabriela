@@ -1,4 +1,3 @@
-
 var backgroundImg, bg;
 var invisGround;
 
@@ -78,6 +77,7 @@ function setup() {
   daffodilsGroup = new Group();
   ledgesGroup = new Group();
   invisibleBlockGroup = new Group();
+  
    
 }
 
@@ -165,14 +165,23 @@ function dirtLedges(){
     }
 
 
-    ledges.depth = mrMole.depth;
-    mrMole.depth += 1;
+    
 
-    mrMole.depth = healthBar.depth;
-    healthBar.depth += 1;
+     
 
     ledgesGroup.add(ledges);
     ledgesGroup.setLifetimeEach(400);
+    ledges.depth = mrMole.depth;
+    mrMole.depth += 1;
+    //worm.depth = mrMole.depth;
+    healthBar.depth=mrMole.depth;
+    healthBar.depth +=1;
+    
+
+    console.log(ledges.depth)
+    console.log(mrMole.depth)
+    console.log(healthBar.depth)
+    
 
   }
 }
@@ -205,5 +214,7 @@ function collectDaffodils(index){
     collected.remove();
   });
 }
+ 
+ 
  
  
